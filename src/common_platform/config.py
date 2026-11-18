@@ -53,4 +53,4 @@ class AppSettings(BaseSettings):
 @lru_cache
 def get_settings() -> AppSettings:
     """設定インスタンスをキャッシュして返す。"""
-    return AppSettings() # type: ignore[call-arg]
+    return AppSettings()  # type: ignore[call-arg]

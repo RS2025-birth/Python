@@ -1,5 +1,6 @@
 import json
 import logging
+from typing import Any
 
 import pytest
 from fastapi import FastAPI
@@ -49,7 +50,7 @@ def _create_test_app() -> FastAPI:
     return app
 
 
-def _extract_app_error_logs(caplog) -> list[dict]:
+def _extract_app_error_logs(caplog) -> list[dict[str, Any]]:
     formatter = JsonFormatter()
     logs = []
     for record in caplog.records:

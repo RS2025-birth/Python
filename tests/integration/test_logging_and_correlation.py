@@ -1,6 +1,7 @@
 import json
 import logging
 import uuid
+from typing import Any
 
 from apps.sample_api.main import app
 from fastapi import Request
@@ -18,7 +19,7 @@ async def _test_echo(request: Request):
     return {"received": True, "external_secret": "SUPER_SECRET_EXTERNAL_DATA"}
 
 
-def _extract_json_logs(caplog) -> list[dict]:
+def _extract_json_logs(caplog) -> list[dict[str, Any]]:
     """caplogで捕捉したレコードを実際のJsonFormatterで変換して取得する。"""
     formatter = JsonFormatter()
     logs = []

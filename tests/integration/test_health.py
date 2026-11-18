@@ -1,10 +1,10 @@
 from collections.abc import Iterator
 
 import pytest
+from apps.sample_api.main import app
 from fastapi.testclient import TestClient
 
 from common_platform.config import get_settings
-from sample_api.main import app
 
 
 @pytest.fixture(autouse=True)

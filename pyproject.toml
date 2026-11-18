@@ -87,13 +87,19 @@ indent-style = "space"
 # --------------------------------------------------
 [tool.mypy]
 python_version = "3.15"
-mypy_path = ["src", "apps"]
+mypy_path = ["src"]
 explicit_package_bases = true
 strict = true
 warn_unused_ignores = false
 plugins = ["pydantic.mypy"]
 show_error_codes = true
 pretty = true
+[[tool.mypy.overrides]]
+module = ["tests.*"]
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+check_untyped_defs = false
+warn_return_any = false
 
 # --------------------------------------------------
 # Poe: 開発コマンド

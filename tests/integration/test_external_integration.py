@@ -1,6 +1,7 @@
 import json
 import logging
 from collections.abc import AsyncGenerator
+from typing import Any
 
 import httpx
 import pytest
@@ -49,7 +50,7 @@ async def setup_integrated_clients():
     sample_app.dependency_overrides.clear()
 
 
-def _get_logs(caplog) -> list[dict]:
+def _get_logs(caplog) -> list[dict[str, Any]]:
     formatter = JsonFormatter()
     return [
         json.loads(formatter.format(record))

@@ -8,7 +8,7 @@ name = "common-platform"
 version = "0.1.0"
 description = "Common platform and FastAPI applications"
 readme = "README.md"
-requires-python = ">=3.12,<3.16"git add .github/workflows/ci.yml pyproject.toml
+requires-python = ">=3.12,<3.16"
 
 dependencies = [
     "fastapi>=0.120.0",
